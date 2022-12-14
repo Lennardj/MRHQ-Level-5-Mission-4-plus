@@ -1,8 +1,29 @@
 // const { expect } = require("chai");
 // const request = require("supertest")("https://localhost:3000/");
 const Main = require("./main");
-const recInput = "./keywords";
-
+// const recInput = "./keywords";
+const keywords = [
+  "collide",
+  "crash",
+  "scratch",
+  "bump",
+  "smash",
+  "collides",
+  "collided",
+  "colliding",
+  "crashes",
+  "crashed",
+  "crashing",
+  "scratches",
+  "scratched",
+  "scratching",
+  "bumps",
+  "bumped",
+  "bumping",
+  "smashes",
+  "smashed",
+  "smashing",
+];
 const randomInt = (num) => Math.floor(Math.random() * num);
 const randomItem = (arr) => arr[randomInt(arr.length)];
 
@@ -32,7 +53,7 @@ const testCases = [
     scenario: "Is a string but no specific words",
     input1: " There are no other",
     input2: recInput,
-    expected: 0, // this should be an error message or a console log
+    expected: 1, // this should be an error message or a console log
   },
   {
     scenario: "No input given",
