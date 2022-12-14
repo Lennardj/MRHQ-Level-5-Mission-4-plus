@@ -34,11 +34,11 @@ jobs:
           npm run test --if-present
           popd
 
-      # - name: "Run Azure Functions Action"
-      #   uses: Azure/functions-action@v1
-      #   id: fa
-      #   with:
-      #     app-name: "riskrating"
-      #     slot-name: "Production"
-      #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-      #     publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7F2C6D780C44C2DBBD4CBB797581A6F }}
+      - name: "Run Azure Functions Action"
+        uses: Azure/functions-action@v1
+        id: fa
+        with:
+          app-name: "riskrating"
+          slot-name: "Production"
+          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7F2C6D780C44C2DBBD4CBB797581A6F }}
