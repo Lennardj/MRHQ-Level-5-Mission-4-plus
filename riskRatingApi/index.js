@@ -30,9 +30,24 @@ module.exports = async function (context, req) {
   //input validation
   if (newRiskAssessment && newRiskAssessment.name && newRiskAssessment.risk) {
     const risk = Main(keywords, req.body.risk);
+
+    const riskItem = {
+      id: "dummy id",
+      name: newRiskAssessment.name,
+      risk: newRiskAssessment.risk,
+      riskrating: risk,
+    };
+    riskratingrecord = {
+      userid: "dummy userid",
+      ...riskItem,
+    };
+
+    context.bindings.riskratingrecord = riskratingrecord;
+
     context.res = {
       status: 200 /* Defaults to 200 */,
-      body: { riskrating: risk, name: newRiskAssessment.name },
+      body: riskItem,
+      //{ riskrating: risk, name: newRiskAssessment.name },
     };
   } else {
     context.res = {
