@@ -2,7 +2,7 @@
 // const request = require("supertest")("https://localhost:3000/");
 const Main = require("./main");
 // const recInput = "./keywords";
-const keywords = [
+const recInput = [
   "collide",
   "crash",
   "scratch",
