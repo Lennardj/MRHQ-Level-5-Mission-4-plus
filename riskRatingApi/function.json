@@ -6,7 +6,6 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
         "post"
       ]
     },
@@ -14,6 +13,16 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "riskratingrecord",
+      "databaseName": "riskratingcontainer",
+      "collectionName": "riskratingitem",
+      "createIfNotExists": false,
+      "connectionStringSetting": "riskratingdb_DOCUMENTDB",
+      "partitionKey": "/userid"
     }
   ]
 }
