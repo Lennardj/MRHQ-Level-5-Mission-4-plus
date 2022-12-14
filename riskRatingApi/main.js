@@ -11,8 +11,12 @@ function Main(Arg1, Arg2) {
 
     const riskAssess = riskText.filter((element) => Arg1.includes(element));
 
-    if (riskAssess.length >= 5) {
-      return 5;
+    if (riskAssess.length <= 0) {
+      return 1;
+    } else if (riskAssess.length > 0) {
+      return riskAssess.length;
+    } else if (riskAssess.length >= 5) {
+      return5;
     } else {
       return riskAssess.length;
     }
