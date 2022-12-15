@@ -5,13 +5,9 @@ module.exports = async function (context, req) {
   const responseMessage = name
     ? "Hello, " + name + ". This HTTP triggered function executed successfully."
     : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-  const html = "<h1>Testcase</h1>";
-  // context.res = {
-  //   // status: 200, /* Defaults to 200 */
-  //   body: html,
-  // };
+  const html = "Testcase";
   context.res = {
-    body: "<!DOCTYPE html> <html> <head> </head> <body> Hello World </body> </html>",
-    contentType: "text/html",
+    // status: 200, /* Defaults to 200 */
+    body: html,
   };
 };
